@@ -41,10 +41,6 @@ void readSerialToInt() {
       tempPosition *= 10;
       tempPosition += (inComingByte - 0x30);
     }
-    else if (inComingByte == 0x2B)
-      tempPosition += 5;
-    else if (inComingByte == 0x2D)
-      tempPosition -= 5;
   }
 
 }
@@ -55,8 +51,8 @@ void sendCommand(int comPosition) {
       motorPosition++;
     else
       motorPosition--;
-      
+
     analogWrite(motorPin, motorPosition);
-    delay(20);
+    delay(50);
   }
 }
